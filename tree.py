@@ -20,10 +20,10 @@ def entropy(data):
 	return entropy
 #calculate gain of all attributes
 def gain(s,data,attrib):
-	values = set(data[attrib])
-	print(values)
+	value = set(data[attrib])
+	print(value)
 	gain = s
-	for val in values:
+	for val in value:
 		gain -= len(data.loc[data[attrib] == val])/float(len(data))*entropy(data.loc[data[attrib] == val])
 	return gain
 # return attribute with maximum gain
