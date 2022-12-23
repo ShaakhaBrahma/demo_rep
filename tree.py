@@ -19,7 +19,7 @@ def entropy(data):
 		entropy += (-1)*(negative_ex/float(total_ex))*(math.log(negative_ex,2)-math.log(total_ex,2))
 	return entropy
 #calculate gain of all attributes
-def gain(s,data,attrib):
+def gai(s,data,attrib):
 	value = set(data[attrib])
 	print(value)
 	gain = s
@@ -32,7 +32,7 @@ def get_attrib(data):
 	attribute =""
 	max_gain = 0
 	for attr in data.columns[:len(data.columns)-1]:
-		g = gain(entropy_s,data,attr)
+		g = gai(entropy_s,data,attr)
 
 		if g > max_gain:
 			max_gain = g
